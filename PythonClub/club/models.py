@@ -4,30 +4,31 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Meeting(models.Model):
-	meetingTitle
-	meetingDate
-	meetingTime
-	meetingLocation
-	meetingAgenda
+	meetingTitle=models.CharField(max_length=255)
+	meetingDate=models.DateField()
+	meetingTime=models.TimeField()
+	meetingLocation=
+	meetingAgenda=models.CharField(max_length=255)
 
-class MeetingMinutes
-	meetingId
-	meetingTime
-	meetingLocation
-	meetingAgenda
+class MeetingMinutes(models.Model):
+	meetingId=
+	meetingTime=models.TimeField()
+	meetingLocation=
+	meetingAgenda=models.CharField(max_length=255)
 
-class Resource
-	resourceName
-	resourceType
-	resourceURL
-	resourceDateEntered
-	userId
-	resourceDescription
+class Resource(models.Model):
+	resourceName=
+	resourceType=
+	resourceURL=
+	resourceDateEntered=models.DateField()
+	userId=models.CharField(max_length=255)
+	resourceDescription=models.CharField(max_length=255)
 
-class Event
-	eventTitle
-	eventLocation
-	eventDate
-	eventTime
-	eventDescription
-	userId	
+class Event(models.Model):
+	eventTitle=models.CharField(max_length=255)
+	eventLocation=
+	eventDate=models.DateField()
+	eventTime=models.TimeField()
+	eventDescription=models.CharField(max_length=255)
+	userId=models.CharField(max_length=255)
+
