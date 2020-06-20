@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Meetings</h1>
+<h1>Minutes</h1>
   <tr>
     <th>Title</th>
     <th>Attendance</th>
     <th>Minutes</th>
   </tr><br>
 
-  {% for t in meeting_list %}
+  {% for t in minutes_list %}
     <tr>
 	<td>{{ t.meetingTitle }}</td>
 	<td>{{ t.mtngAttendance }}</td>
