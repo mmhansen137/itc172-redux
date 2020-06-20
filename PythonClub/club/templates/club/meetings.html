@@ -4,17 +4,24 @@
   <tr>
     <th>Title</th>
     <th>Date</th>
-  </tr>
+    <th>Time</th>
+    <th>Location</th>
+    <th>Agenda</th>
+  </tr></br>
+
   {% for t in meeting_list %}
+
     <tr>
 	<td>{{ t.meetingTitle }}</td>
 	<td>{{ t.meetingDate }}</td>
-    </tr>
+	<td>{{ t.meetingTime }}</td>
+	<td>{{ t.meetingLocation }}</td>
+	<td>{{ t.meetingAgenda }}</td>
+    </tr><br>
 
   {% endfor %}
 
   </table>
 
   {% endblock %}
-
 
