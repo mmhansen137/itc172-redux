@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Meetings</h1>
+<h1>Events</h1>
   <tr>
     <th>Title</th>
+    <th>Location</th>
     <th>Date</th>
-  </tr>
+    <th>Time</th>
+    <th>Description</th>
+    <th>User</th>
+  </tr><br>
   {% for t in meeting_list %}
     <tr>
-	<td>{{ t.meetingTitle }}</td>
-	<td>{{ t.meetingDate }}</td>
-    </tr>
+	<td>{{ t.eventTitle }}</td>
+	<td>{{ t.eventLocation }}</td>
+	<td>{{ t.eventDate }}</td>
+        <td>{{ t.eventTime }}</td>
+        <td>{{ t.eventDescription }}</td>
+        <td>{{ t.userId }}</td>
+    </tr><br>
 
   {% endfor %}
 
