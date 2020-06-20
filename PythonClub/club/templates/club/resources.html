@@ -8,7 +8,7 @@
     <th>Date Entered</th>
     <th>User</th>
     <th>Description</th>
-  </tr>
+  </tr><br>
 
   {% for t in resource_list %}
   <tr>
@@ -18,7 +18,7 @@
     <td>{{ t.resourceDateEntered }}</td>
     <td>{{ t.userId }}</td>
     <td>{{ t.resourceDescription }}</td>
-  </tr>
+  </tr><br>
 
   {% endfor %}
 
