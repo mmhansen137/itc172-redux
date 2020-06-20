@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Events</h1>
+<table class="table">
   <tr>
     <th>Title</th>
     <th>Location</th>
@@ -9,14 +10,14 @@
     <th>Description</th>
     <th>User</th>
   </tr><br>
-  {% for t in event_list %}
+  {% for e in event_list %}
     <tr>
-	<td>{{ t.eventTitle }}</td>
-	<td>{{ t.eventLocation }}</td>
-	<td>{{ t.eventDate }}</td>
-        <td>{{ t.eventTime }}</td>
-        <td>{{ t.eventDescription }}</td>
-        <td>{{ t.userId }}</td>
+	<td>{{ e.eventTitle }}</td>
+	<td>{{ e.eventLocation }}</td>
+	<td>{{ e.eventDate }}</td>
+        <td>{{ e.eventTime }}</td>
+        <td>{{ e.eventDescription }}</td>
+        <td>{{ e.userId }}</td>
     </tr><br>
 
   {% endfor %}
