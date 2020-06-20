@@ -20,5 +20,5 @@ def getresources(request):
 
 def getevents(request):
 	event_list=Event.objects.all()
-	return render(request, 'club/event.html' , {'event_list' : event_list})
+	return render(request, 'club/events.html' , {'event_list' : event_list})
 
