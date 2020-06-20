@@ -10,6 +10,15 @@ def getmeetings(request):
 	meeting_list=Meeting.objects.all()
 	return render(request, 'club/meetings.html' ,{'meeting_list' : meeting_list})
 
+def meetingdetails(request, id):
+	meet=get_object_or_404(Meeting, pk=id)
+	meetings=Meeting.objects.filter(meeting=id).count()
+	context={
+		'meet' : meet,
+		'' : ,
+	}
+	return render(request, 'club/meetingdetails.html', context=context)
+
 def getminutes(request):
 	minutes_list=MeetingMinutes.objects.all()
 	return render(request, 'club/minutes.html' ,{'minutes_list' : minutes_list})
