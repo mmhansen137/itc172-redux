@@ -10,7 +10,7 @@
   {% for m in meeting_list %}
 
     <tr>
-	<td><a href="{% url 'meetingdetails' id=m.id %}>{{ m.meetingTitle }}</a></td>
+	<td><a href="{% url 'meetingdetails' id=m.id %}">{{ m.meetingTitle }}</a></td>
 	<td>{{ m.meetingDate }}</td>
     </tr>
 
