@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Resources</h1>
+<table class="table">
   <tr>
     <th>Title</th>
     <th>Type</th>
@@ -8,17 +9,17 @@
     <th>Date Entered</th>
     <th>User</th>
     <th>Description</th>
-  </tr>
+  </tr><br>
 
-  {% for t in resource_list %}
+  {% for r in resource_list %}
   <tr>
-    <td>{{ t.resourceName }}</td>
-    <td>{{ t.resourceType }}</td>
-    <td>{{ t.resourceURL }}</td>
-    <td>{{ t.resourceDateEntered }}</td>
-    <td>{{ t.userId }}</td>
+    <td>{{ r.resourceName }}</td>
+    <td>{{ r.resourceType }}</td>
+    <td>{{ r.resourceURL }}</td>
+    <td>{{ r.resourceDateEntered }}</td>
+    <td>{{ r.userId }}</td>
     <td>{{ t.resourceDescription }}</td>
-  </tr>
+  </tr><br>
 
   {% endfor %}
 
