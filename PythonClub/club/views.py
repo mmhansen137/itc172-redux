@@ -12,8 +12,7 @@ def getmeetings(request):
 	return render(request, 'club/meetings.html' ,{'meeting_list' : meeting_list})
 
 def meetingdetails(request, id):
-	meet=get_object_or_404(Meeting, pk=id)
-	meetings=Meeting.objects.filter(meeting=id).count()
+	meet=get_object_or_404(Meetings, pk=id)
 	context={'meet' : meet}
 	return render(request, 'club/meetingdetails.html', context=context)
 
