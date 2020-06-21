@@ -5,9 +5,6 @@
   <tr>
     <th>Title</th>
     <th>Date</th>
-    <th>Time</th>
-    <th>Location</th>
-    <th>Agenda</th>
   </tr></br>
 
   {% for m in meeting_list %}
@@ -15,9 +12,6 @@
     <tr>
 	<td><a href="{% url 'meetingdetails' id=m.id %}>{{ m.meetingTitle }}</a></td>
 	<td>{{ m.meetingDate }}</td>
-	<td>{{ m.meetingTime }}</td>
-	<td>{{ m.meetingLocation }}</td>
-	<td>{{ m.meetingAgenda }}</td>
     </tr><br>
 
   {% endfor %}
