@@ -10,6 +10,10 @@ class MeetingClassTest(TestCase):
 	def test_table(self):
 		self.assertEqual(str(Meeting._meta.db_table), 'meeting')
 
+	def test_location(self):
+		meetTestLoc=Meeting(meetingLocation="Test Location")
+		self.assertEqual(str(meetTestLoc), meetTestLoc.meetingLocation)
+
 class MeetingMinutesClassTest(TestCase):
 	#def test_string(self):
 	#	meetMinTest=MeetingMinutes(meetingTitle="Another Test Meeting")
