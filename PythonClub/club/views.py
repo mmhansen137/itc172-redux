@@ -41,3 +41,15 @@ def newMeeting(request):
 		form=MeetingForm()
 	return render(request, 'club/newmeeting.html', {'form': form})
 
+def newEvent(request):
+	form=EventForm
+	if request.method=='POST':
+		form=EventForm(request.POST)
+		if form.is_valid():
+			post=form.save(commit=True)
+			post.save()
+			form=EventForm()
+	else:
+		form=EventForm()
+	return render(request, 'club/newevent.html', {'form': form})
+
