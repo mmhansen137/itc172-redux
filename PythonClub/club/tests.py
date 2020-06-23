@@ -38,10 +38,17 @@ class EventClassTest(TestCase):
 
 # Form Tests
 
+
+
 class MeetingFormTest(TestCase):
+	def test_meetform_minus_descript(self):
+		form=MeetingForm(data={'meetingTitle': "title1"})
+		self.assertTrue(form.is_valid())
+
 	def test_meetform_empty(self):
 		form=MeetingForm(data={'meetingTitle': ""})
 		self.assertFalse(form.is_valid())
+
 
 
 
