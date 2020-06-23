@@ -41,8 +41,8 @@ class Resource(models.Model):
 		return self.resourceName
 
 	class Meta:
-		db_table="resource"
-		verbose_name_plural='resources'
+		db_table='resource'
+		verbose_name_plural="resources"
 
 class Event(models.Model):
 	eventTitle=models.CharField(max_length=255)
@@ -57,5 +57,5 @@ class Event(models.Model):
 
 	class Meta:
 		db_table='event'
-		verbose_name_plural='events'
+		verbose_name_plural="events"
 
