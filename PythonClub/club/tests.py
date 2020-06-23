@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Meeting, MeetingMinutes, Resource, Event
-from .forms import MeetingForm
+from .forms import MeetingForm, EventForm
 
 # Model Tests
 
@@ -49,6 +49,10 @@ class MeetingFormTest(TestCase):
 		form=MeetingForm(data={'meetingTitle': ""})
 		self.assertFalse(form.is_valid())
 
+# Auth Tests
 
-
-
+class New_Meeting_authentication_test(TestCase):
+	def setUp(self):
+		self.test_user-User.objects.create_user(username='testuser1', password='P@ssw0rd1')
+		self.meet=Meeting.objects.create(meetingTitle='testmeeting')
+		self.event=Event.objects.create(eventTitle='event1', eventLocation=self
