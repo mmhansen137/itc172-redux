@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .models import Meeting, MeetingMinutes, Resource, Event
-from .forms import MeetingForm,EventForm
+from .forms import MeetingForm, EventForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Model Tests
 
@@ -55,4 +57,8 @@ class New_Meeting_authentication_test(TestCase):
 	def setUp(self):
 		self.test_user=User.objects.create_user(username='testuser1', password='P@ssw0rd1')
 		self.meet=Meeting.objects.create(meetingTitle='testmeeting')
+
+	def test_redirect_if_not_logged_in(self):
+		response=self.client.get(reverse('newmeeting'))
+		self.assertRedirects(response, '/accounts/login/?next=/club/newmeeting/')
 
