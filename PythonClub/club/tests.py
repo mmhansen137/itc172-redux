@@ -51,6 +51,11 @@ class MeetingFormTest(TestCase):
 		form=MeetingForm(data={'meetingTitle': ""})
 		self.assertFalse(form.is_valid())
 
+class MeetingMinutesFormTest(TestCase):
+	def test_meetminform_is_valid(self):
+		form=MeetingMinutesForm(data={'meetingTitle': "title1", 'mtngAttendance' : "foo", 'mtngMinutes' : "Meeting cancelled due to COVID 19"})
+		self.assertTrue(form.is_valid())
+
 # Auth Tests
 
 class New_Meeting_authentication_test(TestCase):
