@@ -53,6 +53,6 @@ class MeetingFormTest(TestCase):
 
 class New_Meeting_authentication_test(TestCase):
 	def setUp(self):
-		self.test_user-User.objects.create_user(username='testuser1', password='P@ssw0rd1')
+		self.test_user=User.objects.create_user(username='testuser1', password='P@ssw0rd1')
 		self.meet=Meeting.objects.create(meetingTitle='testmeeting')
-		self.event=Event.objects.create(eventTitle='event1', eventLocation=self
+
