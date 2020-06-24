@@ -57,7 +57,7 @@ class MeetingMinutesFormTest(TestCase):
 		self.assertTrue(form.is_valid())
 
 	def test_meetminform_minus_descript(self):
-		form=MeetingMinutesForm(data={'meetingName': "Test Meeting"})
+		form=MeetingMinutesForm(data={'meetingTitle': "Test Meeting"})
 		self.assertTrue(form.is_valid())
 
 	def test_meetminform_empty(self):
