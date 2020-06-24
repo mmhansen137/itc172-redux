@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Meeting, MeetingMinutes, Resource, Event
-from .forms import MeetingForm, EventForm
+from .forms import MeetingForm, MeetingMinutesForm, EventForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.

@@ -6,6 +6,11 @@ class MeetingForm(forms.ModelForm):
 		model = Meeting
 		fields='__all__'
 
+class MeetingMinutesForm(forms.ModelForm):
+	class Meta:
+		model = MeetingMinutes
+		fields='__all__'
+
 
 class EventForm(forms.ModelForm):
 	class Meta:
