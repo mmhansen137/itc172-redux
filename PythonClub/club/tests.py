@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Meeting, MeetingMinutes, Resource, Event
-from .forms import MeetingForm, EventForm
+from .forms import MeetingForm,EventForm
 
 # Model Tests
 
