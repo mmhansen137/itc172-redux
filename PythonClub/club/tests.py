@@ -62,3 +62,10 @@ class New_Meeting_authentication_test(TestCase):
 #		response=self.client.get(reverse('newmeeting'))
 #		self.assertRedirects(response, '/accounts/login/?next=/club/newmeeting/')
 
+	def test_Logged_in_uses_correct_template(self):
+		loggin=self.client.login(username='testuser1', password='P@ssw0rd1')
+		response=self.client.get(reverse('newmeeting'))
+		self.assertEqual(str(response.context['user']), 'testuser1')
+		self.assertEqual(response.status_code, 200)
+		self.assertTemplateUsed(response, 'club/newmeeting.html')
+
