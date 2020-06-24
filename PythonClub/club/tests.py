@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .models import Meeting, MeetingMinutes, Resource, Event
 from .forms import MeetingForm, EventForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Model Tests
 
@@ -53,6 +55,17 @@ class MeetingFormTest(TestCase):
 
 class New_Meeting_authentication_test(TestCase):
 	def setUp(self):
-		self.test_user-User.objects.create_user(username='testuser1', password='P@ssw0rd1')
+		self.test_user=User.objects.create_user(username='testuser1', password='P@ssw0rd1')
 		self.meet=Meeting.objects.create(meetingTitle='testmeeting')
-		self.event=Event.objects.create(eventTitle='event1', eventLocation=self
+
+#	def test_redirect_if_not_logged_in(self):
+#		response=self.client.get(reverse('newmeeting'))
+#		self.assertRedirects(response, '/accounts/login/?next=/club/newmeeting/')
+
+	def test_Logged_in_uses_correct_template(self):
+		login=self.client.login(username='testuser1', password='P@ssw0rd1')
+		response=self.client.get(reverse('newmeeting'))
+		self.assertEqual(str(response.context['user']), 'testuser1')
+		self.assertEqual(response.status_code, 200)
+		self.assertTemplateUsed(response, 'club/newmeeting.html')
+
