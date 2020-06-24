@@ -44,6 +44,19 @@ def newMeeting(request):
 	return render(request, 'club/newmeeting.html', {'form': form})
 
 @login_required
+def newMeetingMinutes(request):
+	form=MeetingMinutesForm
+	if request.method=='POST':
+		form=MeetingForm(request.POST)
+		if form.is_valid():
+			post=form.save(commit=True)
+			post.save()
+			form=MeetingMinutesForm()
+	else:
+		form=MeetingMinutesForm()
+	return render(request, 'club/newmeeting.html', {'form': form})
+
+@login_required
 def newEvent(request):
 	form=EventForm
 	if request.method=='POST':
