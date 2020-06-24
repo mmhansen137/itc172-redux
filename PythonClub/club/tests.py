@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Meeting, MeetingMinutes, Resource, Event
-from .forms import MeetingForm, EventForm
+from .forms import MeetingForm, MeetingMinutesForm, EventForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -55,6 +55,16 @@ class MeetingMinutesFormTest(TestCase):
 	def test_meetminform_is_valid(self):
 		form=MeetingMinutesForm(data={'meetingTitle': "title1", 'mtngAttendance' : "foo", 'mtngMinutes' : "Meeting cancelled due to COVID 19"})
 		self.assertTrue(form.is_valid())
+
+	def test_meetminform_minus_descript(self):
+		form=MeetingMinutesForm(data={'meetingName': "Test Meeting"})
+		self.assertTrue(form.is_valid())
+
+	def test_meetminform_empty(self):
+		form=MeetingMinutesForm(data={'meetingTitle': ""})
+		self.assertFalse(form.is_valid())
+
+
 
 # Auth Tests
 
